@@ -1,6 +1,6 @@
 # Academic Articles Accessibility Dataset
 
-This repository contains the **final** set of documents classified by accessibility and organized as follows:
+This repository contains an dataset of documents classified by accessibility and organized as follows:
 
 ```text
 /class0   → inaccessible PDFs  
@@ -15,7 +15,6 @@ Labelling follows the checkpoints of the **Matterhorn Protocol** as evaluated by
 1. [Accessibility Context in PDF](#accessibility-context-in-pdf)  
 2. [Matterhorn Protocol](#matterhorn-protocol)  
 3. [PDF Accessibility Checker (PAC)](#pdf-accessibility-checker-pac)  
-4. [References](#references)
 
 ---
 
@@ -58,17 +57,3 @@ The results are grouped into:
 | Metadata & Settings  | Metadata, Document Settings                                                   |
 
 Critical failures in **PDF Syntax** (e.g., missing `/Tagged` flag) halt the audit and classify the PDF as inaccessible.
-
----
-
-## References
-
-- **Adobe.** *PDF Accessibility Overview*, 2023.  
-- **axes4.** *PAC 2024 – PDF Accessibility Checker*, 2024.  
-- **Brazil.** Law 13.146 / 2015 (*Brazilian Inclusion Act*).  
-- **Darvishy F. et al.** “Accessibility in Swiss Repositories”, 2023.  
-- **Guimarães J.** “PDF Accessibility in Academic Publishing”, 2019.  
-- **PDF Association.** *Matterhorn Protocol* v1.1, 2021.  
-- **Pierres E.** “Semantic Tags in University Repositories”, 2024.  
-
-*All texts are available in open access.*
