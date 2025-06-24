@@ -1,74 +1,74 @@
-# Repositório do *Dataset* de Acessibilidade em Artigos Acadêmicos (PDF)
+# Academic Articles Accessibility Dataset
 
-Este repositório disponibiliza o conjunto de documentos classificados quanto à acessibilidade, organizado da seguinte forma:
+This repository contains the **final** set of documents classified by accessibility and organized as follows:
 
 ```text
-/class0   → PDFs não acessíveis
-/class1   → PDFs acessíveis  
+/class0   → inaccessible PDFs  
+/class1   → accessible PDFs
 ```
 
-A rotulagem baseia‑se nos checkpoints do **Protocolo Matterhorn** analisados pelo **PDF Accessibility Checker (PAC)**.
+Labelling follows the checkpoints of the **Matterhorn Protocol** as evaluated by the **PDF Accessibility Checker (PAC)**.
 
 ---
 
-## Índice
-1. [Contexto da Acessibilidade em PDF](#contexto-da-acessibilidade-em-pdf)  
-2. [Protocolo Matterhorn](#protocolo-matterhorn)  
+## Table of Contents
+1. [Accessibility Context in PDF](#accessibility-context-in-pdf)  
+2. [Matterhorn Protocol](#matterhorn-protocol)  
 3. [PDF Accessibility Checker (PAC)](#pdf-accessibility-checker-pac)  
-4. [Referências](#referências)
+4. [References](#references)
 
 ---
 
-## Contexto da Acessibilidade em PDF
+## Accessibility Context in PDF
 
-Acessibilidade digital exige que conteúdos sejam utilizáveis por todas as pessoas, inclusive usuárias de tecnologias assistivas.  
-Artigos científicos em **PDF** frequentemente carecem de marcação semântica, navegação por cabeçalhos e metadados de idioma, o que dificulta sua interpretação por leitores de tela.  
-Embora a Lei nº 13.146/2015 (Lei Brasileira de Inclusão) assegure igualdade de acesso no ensino superior, estudos recentes revelam alta prevalência de falhas estruturais em repositórios institucionais e editoras comerciais.
+Digital accessibility requires that content be usable by everyone, including people who rely on assistive technologies.  
+Scientific articles in **PDF** format often lack semantic tagging, header navigation and language metadata, which hampers their interpretation by screen readers.  
+Although the Brazilian Inclusion Act (Law 13.146/2015) mandates equal access in higher education, recent studies reveal a high prevalence of structural issues in institutional repositories and commercial publishers.
 
 ---
 
-## Protocolo Matterhorn
+## Matterhorn Protocol
 
-O **Matterhorn Protocol** (PDF Association, 2013 / rev. 2021) converte o padrão **PDF/UA (ISO 14289‑1)** em *136 condições de falha*:
+The **Matterhorn Protocol** (PDF Association, 2013 / rev. 2021) converts the **PDF/UA (ISO 14289‑1)** standard into *136 failure conditions*:
 
-| Bloco               | Exemplo de checkpoint | IDs Matterhorn |
-|---------------------|-----------------------|----------------|
-| Basic Requirements  | flag `/Tagged`        | 01–12, 18, 20–22, 30–31 |
-| Logical Structure   | hierarquia de títulos | 09, 13–19, 27–28 |
-| Metadata & Settings | idioma global         | 03–08, 23–26, 29 |
+| Block                | Checkpoint example | Matterhorn IDs |
+|----------------------|--------------------|----------------|
+| Basic Requirements   | `/Tagged` flag     | 01–12, 18, 20–22, 30–31 |
+| Logical Structure    | heading hierarchy  | 09, 13–19, 27–28 |
+| Metadata & Settings  | global language    | 03–08, 23–26, 29 |
 
-Neste *dataset*, falhas no grupo **PDF Syntax** implicam rótulo **não acessível**, independentemente das demais verificações.
+Within this *dataset*, failures in **PDF Syntax** automatically label the document as **inaccessible**, regardless of other checks.
 
 ---
 
 ## PDF Accessibility Checker (PAC)
 
-[**PAC 2024**](https://www.axes4.com/) implementa a maioria dos checkpoints Matterhorn e produz três saídas principais:
+[**PAC 2024**](https://www.axes4.com/) implements most Matterhorn checkpoints and produces three main outputs:
 
-* **Resumo** — aprovado, aviso *(warning)* ou reprovado  
-* **Relatório técnico** — lista de falhas, localização e instruções de correção  
-* **Árvore de tags** — visualização da estrutura lógica do documento  
+* **Summary** — passed, warning or failed  
+* **Technical report** — list of errors, their locations and fix suggestions  
+* **Tag tree** — visualisation of the document’s logical structure  
 
-Os resultados são agrupados em:
+The results are grouped into:
 
-| Bloco PAC           | Itens verificados                                                                 |
-|---------------------|-----------------------------------------------------------------------------------|
-| Basic Requirements  | PDF Syntax, Fonts, Content, Embedded Files, Natural Language                      |
-| Logical Structure   | Structure Elements, Structure Tree, Role Mapping, Alternative Descriptions        |
-| Metadata & Settings | Metadata, Document Settings                                                       |
+| PAC block            | Items verified                                                                |
+|----------------------|-------------------------------------------------------------------------------|
+| Basic Requirements   | PDF Syntax, Fonts, Content, Embedded Files, Natural Language                  |
+| Logical Structure    | Structure Elements, Structure Tree, Role Mapping, Alternative Descriptions    |
+| Metadata & Settings  | Metadata, Document Settings                                                   |
 
-Falhas críticas em **PDF Syntax** (ex.: ausência da flag `/Tagged`) impedem a continuidade da auditoria e classificam o PDF como não acessível.
+Critical failures in **PDF Syntax** (e.g., missing `/Tagged` flag) halt the audit and classify the PDF as inaccessible.
 
 ---
 
-## Referências
+## References
 
 - **Adobe.** *PDF Accessibility Overview*, 2023.  
 - **axes4.** *PAC 2024 – PDF Accessibility Checker*, 2024.  
-- **Brasil.** Lei nº 13.146 / 2015 (*Lei Brasileira de Inclusão*).  
+- **Brazil.** Law 13.146 / 2015 (*Brazilian Inclusion Act*).  
 - **Darvishy F. et al.** “Accessibility in Swiss Repositories”, 2023.  
 - **Guimarães J.** “PDF Accessibility in Academic Publishing”, 2019.  
 - **PDF Association.** *Matterhorn Protocol* v1.1, 2021.  
 - **Pierres E.** “Semantic Tags in University Repositories”, 2024.  
 
-*Todos os textos estão disponíveis em acesso aberto.*
+*All texts are available in open access.*
